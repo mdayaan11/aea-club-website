@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eee9df" />
+  <meta name="description" content="AEA Club — Voice of Engineers. A multidisciplinary engineering community building what is next." />
+  <title>AEA Club — Voice of Engineers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700;1,900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="intro.css" />
+</head>
+<body>
+  <!-- 3D INTRO OVERLAY -->
+  <div id="site-intro" role="dialog" aria-label="AEA Club intro" aria-modal="true">
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-scanlines"></div>
+    <div class="intro-grid"></div>
+    <div class="intro-corners">
+      <span class="intro-corner-br"></span>
+      <span class="intro-corner-bl"></span>
+    </div>
+    <div class="intro-content">
+      <div class="intro-mark"><i></i><i></i><i></i></div>
+      <div class="intro-fullname">All Engineers Association Club</div>
+      <div class="intro-wordmark">AEA<span>CLUB</span></div>
+      <div class="intro-tagline">Voice&nbsp;&nbsp;of&nbsp;&nbsp;Engineers</div>
+    </div>
+    <div class="intro-loader">
+      <div class="intro-loader-track"><div class="intro-loader-fill"></div></div>
+      <span class="intro-loader-label">INITIALISING SYSTEM</span>
+    </div>
+    <button class="intro-skip">SKIP ↗</button>
+  </div>
+
+  <div class="site-shell">
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <!-- HEADER -->
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="AEA Club home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">AEA<span>CLUB</span></span>
+      </a>
+      <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="#story">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <a class="header-cta" href="#join"><span>Join the club</span><b>↗</b></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav>
+        <a href="#story">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="projects.html">Projects</a>
+        <a href="#join" class="mobile-cta">Join the club ↗</a>
+      </nav>
+    </div>
+
+    <main id="top">
+
+      <!-- HERO -->
+      <section class="hero section-pad" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>All Engineers Association</div>
+          <h1 id="hero-title">Build what<br /><em>moves</em> tomorrow.</h1>
+          <p class="hero-lede">One club. Every discipline. A living network of engineers turning curiosity into capability — and capability into impact.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#join">Enter the network <span>↗</span></a>
+            <a class="button button-ghost" href="#story">Explore AEA <span>↓</span></a>
+          </div>
+          <div class="hero-meta"><span>01 / 05</span><span class="meta-line"></span><span>Scroll to enter</span></div>
+        </div>
+        <div class="hero-stage reveal reveal-delay" role="img" aria-label="Interactive orbital visualization">
+          <div class="stage-glow"></div>
+          <canvas id="orbital-canvas" aria-label="Orbital network visualization">AEA orbital network visualization.</canvas>
+          <div class="stage-label stage-label-top"><span>LIVE SYSTEM</span><b>AEA / 2026</b></div>
+          <div class="stage-label stage-label-bottom"><span>500+</span><b>minds in motion</b></div>
+          <div class="stage-crosshair" aria-hidden="true"><span></span><i></i></div>
+        </div>
+        <div class="hero-side-note">UNITE<br /><span>✦</span> BUILD<br /><span>✦</span> RISE<br /><span>✦</span> LEAD</div>
+      </section>
+
+      <!-- SIGNAL STRIP -->
+      <section class="signal-strip" aria-label="Club principles">
+        <div class="signal-track">
+          <span>CURIOUS BY DEFAULT</span><i>✦</i>
+          <span>BUILT ACROSS BOUNDARIES</span><i>✦</i>
+          <span>READY FOR WHAT'S NEXT</span><i>✦</i>
+          <span>SILIGURI · WEST BENGAL</span><i>✦</i>
+          <span>CURIOUS BY DEFAULT</span><i>✦</i>
+          <span>BUILT ACROSS BOUNDARIES</span><i>✦</i>
+          <span>READY FOR WHAT'S NEXT</span><i>✦</i>
+          <span>SILIGURI · WEST BENGAL</span><i>✦</i>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="story section-pad" id="story" aria-labelledby="story-title">
+        <div class="section-kicker reveal"><span>01</span><span>WHY AEA EXISTS</span></div>
+        <div class="story-grid">
+          <div class="story-heading reveal">
+            <p class="section-label">Who we are</p>
+            <h2 id="story-title">The room where<br /><em>disciplines</em> collide.</h2>
+          </div>
+          <div class="story-copy reveal reveal-delay">
+            <p class="lede-large">AEA Club is a multidisciplinary engineering community for students who want more than a syllabus.</p>
+            <p>We connect mechanical minds with software builders, circuit hackers with civil thinkers, and every curious engineer in between. Through projects, workshops, mentorship, and a little healthy chaos, we make room for ideas to become real.</p>
+            <a class="text-link" href="#departments">See our orbit <span>↘</span></a>
+          </div>
+        </div>
+        <div class="story-stats reveal">
+          <div><strong>500<span>+</span></strong><span>engineers in our network</span></div>
+          <div><strong>50<span>+</span></strong><span>events &amp; workshops / year</span></div>
+          <div><strong>06</strong><span>engineering departments</span></div>
+          <div><strong>01</strong><span>shared voice</span></div>
+        </div>
+      </section>
+
+      <!-- DEPARTMENTS -->
+      <section class="departments section-pad" id="departments" aria-labelledby="departments-title">
+        <div class="section-kicker reveal"><span>02</span><span>THE AEA ORBIT</span></div>
+        <div class="section-intro reveal">
+          <div>
+            <p class="section-label">Our expertise</p>
+            <h2 id="departments-title">Different inputs.<br /><em>One signal.</em></h2>
+          </div>
+          <p>Pick a direction, then cross the room. Our strongest work happens at the edges between disciplines.</p>
+        </div>
+        <div class="department-list">
+          <article class="department-card reveal">
+            <span class="card-index">01</span>
+            <div class="department-icon icon-mech">◌</div>
+            <h3>Mechanical</h3>
+            <p>Robotics, CAD, systems design, and the elegant art of making things move.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="department-card reveal reveal-delay-1">
+            <span class="card-index">02</span>
+            <div class="department-icon icon-code">{ }</div>
+            <h3>Computer Science</h3>
+            <p>Full-stack builds, AI/ML, cybersecurity, and software with a point of view.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="department-card reveal reveal-delay-2">
+            <span class="card-index">03</span>
+            <div class="department-icon icon-electro">⌁</div>
+            <h3>Electronics</h3>
+            <p>Embedded systems, power, IoT, and circuits that make the invisible useful.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="department-card reveal">
+            <span class="card-index">04</span>
+            <div class="department-icon icon-civil">╱╲</div>
+            <h3>Civil</h3>
+            <p>Structural thinking, sustainable construction, and cities built for people.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="department-card reveal reveal-delay-1">
+            <span class="card-index">05</span>
+            <div class="department-icon icon-chemical">✣</div>
+            <h3>Chemical</h3>
+            <p>Materials, process optimization, and environmental solutions that scale.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+          <article class="department-card reveal reveal-delay-2">
+            <span class="card-index">06</span>
+            <div class="department-icon icon-aero">✧</div>
+            <h3>Aerospace</h3>
+            <p>Aerodynamics, propulsion, and the stubborn belief that up is a direction.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <!-- EVENTS -->
+      <section class="event-section section-pad" id="events" aria-labelledby="event-title">
+        <div class="event-card reveal">
+          <div class="event-orb" aria-hidden="true"><span></span><b></b><i></i></div>
+          <div class="event-details">
+            <div class="section-kicker"><span>03</span><span>ON THE RADAR</span></div>
+            <p class="section-label">Upcoming event</p>
+            <h2 id="event-title">Tech <em>Latent</em></h2>
+            <p class="event-description">A stage for the ideas, projects, demos, and weird little experiments that make engineering worth doing. Bring what you're building.</p>
+            <div class="event-foot">
+              <div><span>WHEN</span><strong>TBA · 2026</strong></div>
+              <div><span>FORMAT</span><strong>Showcase + live demos</strong></div>
+              <a class="button button-primary" href="mailto:supportaeac@gmail.com?subject=Tech%20Latent%20updates">Get notified <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section class="team section-pad" id="team" aria-labelledby="team-title">
+        <div class="section-kicker reveal"><span>04</span><span>PEOPLE IN MOTION</span></div>
+        <div class="section-intro reveal">
+          <div>
+            <p class="section-label">Leadership</p>
+            <h2 id="team-title">The signal is<br /><em>people.</em></h2>
+          </div>
+          <p>Students leading students. Mentors opening doors. A crew that keeps the whole system moving.</p>
+        </div>
+        <div class="team-carousel-wrap reveal">
+          <div class="team-carousel" id="teamCarousel">
+            <article class="person-card person-feature">
+              <div class="avatar avatar-coral">AD</div>
+              <div class="person-top"><span>01 / PRESIDENT</span><a href="https://www.linkedin.com/in/arkajyoti-das-a50825417/" target="_blank" rel="noopener">↗</a></div>
+              <h3>Arkajyoti Das</h3>
+              <p>Leads AEA with clarity, purpose, and a bias toward meaningful engineering impact. District Ranker — Class 10 Board.</p>
+              <div class="person-tags"><span>Direction</span><span>Culture</span><span>Impact</span></div>
+            </article>
+            <article class="person-card">
+              <div class="avatar avatar-lavender">MA</div>
+              <div class="person-top"><span>02 / VICE PRESIDENT</span><a href="https://www.linkedin.com/in/md-ayan-sk-16a264322/" target="_blank" rel="noopener">↗</a></div>
+              <h3>Md Ayan Sk</h3>
+              <p>IIT Madras student, IIT Ropar intern. Bringing academic depth and a builder's instinct to every club initiative.</p>
+              <div class="person-tags"><span>Research</span><span>Strategy</span></div>
+            </article>
+            <article class="person-card">
+              <div class="avatar avatar-blue">BA</div>
+              <div class="person-top"><span>03 / SECRETARY</span><a href="https://www.linkedin.com/in/banti-agarwal-ab6086385/" target="_blank" rel="noopener">↗</a></div>
+              <h3>Banti Agarwal</h3>
+              <p>10 SGPA MAKAUT. Keeping the club sharp, coordinated, and ready to move together.</p>
+              <div class="person-tags"><span>Systems</span><span>Ops</span></div>
+            </article>
+            <article class="person-card">
+              <div class="avatar avatar-gold">MS</div>
+              <div class="person-top"><span>04 / TREASURER</span><span></span></div>
+              <h3>Mit Sharma</h3>
+              <p>Managing the club's finances with precision and transparency. Every rupee powers great engineering.</p>
+              <div class="person-tags"><span>Finance</span><span>Planning</span></div>
+            </article>
+            <article class="person-card">
+              <div class="avatar avatar-red">BB</div>
+              <div class="person-top"><span>05 / EVENT COORDINATOR</span><span></span></div>
+              <h3>Bethin Baishya</h3>
+              <p>Orchestrating impactful events — from workshops and hackathons to seminars and club drives.</p>
+              <div class="person-tags"><span>Events</span><span>Logistics</span></div>
+            </article>
+          </div>
+          <!-- Controls -->
+          <div class="team-controls">
+            <button class="tc-btn tc-prev" id="tcPrev" aria-label="Previous member">←</button>
+            <div class="tc-dots" id="tcDots">
+              <span class="tc-dot active"></span>
+              <span class="tc-dot"></span>
+              <span class="tc-dot"></span>
+              <span class="tc-dot"></span>
+              <span class="tc-dot"></span>
+            </div>
+            <button class="tc-btn tc-next" id="tcNext" aria-label="Next member">→</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- OPEN ROLES -->
+      <section class="roles section-pad" aria-labelledby="roles-title">
+        <div class="roles-head reveal">
+          <div>
+            <p class="section-label">Find your frequency</p>
+            <h2 id="roles-title">There's a place<br /><em>for your signal.</em></h2>
+          </div>
+          <p>Open roles for the people who want to shape what AEA becomes next.</p>
+        </div>
+        <div class="role-list">
+          <a class="role-row reveal" href="#join"><span class="role-number">01</span><span class="role-name">Technical Lead</span><span class="role-skills">Projects · Workshops · Mentoring</span><span class="role-arrow">↗</span></a>
+          <a class="role-row reveal" href="#join"><span class="role-number">02</span><span class="role-name">Events Architect</span><span class="role-skills">Planning · Logistics · Creativity</span><span class="role-arrow">↗</span></a>
+          <a class="role-row reveal" href="#join"><span class="role-number">03</span><span class="role-name">Media &amp; Comms</span><span class="role-skills">Content · Reels · Branding</span><span class="role-arrow">↗</span></a>
+          <a class="role-row reveal" href="#join"><span class="role-number">04</span><span class="role-name">Design Director</span><span class="role-skills">Figma · Visuals · Systems</span><span class="role-arrow">↗</span></a>
+          <a class="role-row reveal" href="#join"><span class="role-number">05</span><span class="role-name">Partnerships</span><span class="role-skills">Networking · Sponsors · Comms</span><span class="role-arrow">↗</span></a>
+        </div>
+      </section>
+
+      <!-- JOIN -->
+      <section class="join section-pad" id="join" aria-labelledby="join-title">
+        <div class="join-panel reveal">
+          <div class="join-scanlines" aria-hidden="true"></div>
+          <div class="join-content">
+            <p class="section-label">Open enrollment</p>
+            <h2 id="join-title">Make your<br /><em>move.</em></h2>
+            <p>Bring the half-built idea. The impossible question. The thing you haven't found a team for yet.</p>
+            <div class="join-form-wrap">
+              <form id="joinForm" class="join-form" autocomplete="off">
+                <div class="field-row">
+                  <input type="text" id="jf-name" placeholder="Full name" required />
+                  <input type="email" id="jf-email" placeholder="Email address" required />
+                </div>
+                <div class="field-row">
+                  <select id="jf-dept" required>
+                    <option value="" disabled selected>Department</option>
+                    <option>Mechanical Engineering</option>
+                    <option>Computer Science</option>
+                    <option>Electronics Engineering</option>
+                    <option>Civil Engineering</option>
+                    <option>Chemical Engineering</option>
+                    <option>Aerospace Engineering</option>
+                    <option>Other</option>
+                  </select>
+                  <select id="jf-year" required>
+                    <option value="" disabled selected>Year of study</option>
+                    <option>First Year</option>
+                    <option>Second Year</option>
+                    <option>Third Year</option>
+                    <option>Final Year</option>
+                    <option>Post-Graduate</option>
+                  </select>
+                </div>
+                <textarea id="jf-motivation" placeholder="Why do you want to join AEA? (optional)" rows="3"></textarea>
+                <button type="submit" class="button button-primary" id="joinSubmitBtn">
+                  <span>Join AEA</span><b>↗</b>
+                </button>
+                <p class="form-error" id="joinError"></p>
+              </form>
+              <div class="join-success" id="joinSuccess">
+                <div class="success-mark">✓</div>
+                <h3>Application received!</h3>
+                <p>We'll be in touch within 48 hours. Welcome to the network.</p>
+              </div>
+            </div>
+          </div>
+          <div class="join-code" aria-hidden="true">
+            <span>AEA//ENTRY_POINT</span>
+            <span>STATUS: OPEN</span>
+            <span>ACCESS: EVERYONE</span>
+            <b>✦</b>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer section-pad" id="contact">
+      <div class="footer-top">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="brand-name">AEA<span>CLUB</span></span>
+        </a>
+        <p>Voice of Engineers.<br />Built for what's next.</p>
+        <div class="footer-contact-group">
+          <a class="footer-contact" href="mailto:supportaeac@gmail.com">supportaeac@gmail.com <span>↗</span></a>
+          <span class="footer-location">📍 Siliguri, West Bengal</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AEA CLUB</span>
+        <span>UNITE ✦ BUILD ✦ RISE ✦ LEAD</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+  </div><!-- .site-shell -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="intro.js"></script>
+  <script src="app.js"></script>
+  <script src="effects.js" defer></script>
+</body>
+</html>

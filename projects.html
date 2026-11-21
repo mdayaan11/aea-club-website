@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — AEA Club</title>
+  <meta name="description" content="AEA Club open projects. Members can submit projects and register for collaboration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="projects.css" />
+</head>
+<body>
+
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40">
+                <stop offset="0%" stop-color="#6C5CE7"/>
+                <stop offset="100%" stop-color="#00B4D8"/>
+              </linearGradient>
+            </defs>
+            <rect width="40" height="40" rx="12" fill="url(#logoGrad)"/>
+            <path d="M20 10L12 28h4l1.5-4h5l1.5 4h4L20 10zm-1 11l1-3 1 3h-2z" fill="white"/>
+            <circle cx="29" cy="14" r="3" fill="rgba(255,255,255,0.8)"/>
+          </svg>
+        </div>
+        <span class="brand-text">AEA <span class="brand-accent">CLUB</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#events" class="nav-link">Events</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="index.html#team" class="nav-link">Team</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="index.html#join" class="nav-cta">
+        <span>Join Us</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-links">
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#events" class="mobile-link">Events</a></li>
+      <li><a href="projects.html" class="mobile-link">Projects</a></li>
+      <li><a href="index.html#team" class="mobile-link">Team</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      <li><a href="index.html#join" class="mobile-link cta">Join Us &rarr;</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="proj-page-header">
+    <div class="container">
+      <div class="proj-page-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Projects</span>
+      </div>
+      <h1 class="proj-page-title">Open <span class="gradient-text">Projects</span></h1>
+      <p class="proj-page-subtitle">
+        Real engineering projects run by AEA Club members. Click any project to view details and apply to collaborate.<br/>
+        <strong>Access is restricted to verified AEA Club members.</strong>
+      </p>
+      <div class="proj-page-actions">
+        <button class="btn btn-primary" id="submitProjectBtn">
+          <span>Submit a Project</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="member-status-pill" id="memberStatusPill">
+          <span class="member-dot offline"></span>
+          <span id="memberStatusText">Not signed in as member</span>
+          <button class="member-sign-btn" id="memberSignInBtn">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="proj-main">
+    <div class="container">
+
+      <!-- FILTER BAR -->
+      <div class="proj-filter-bar">
+        <div class="proj-filter-tabs">
+          <button class="pf-tab active" data-filter="all">All Projects</button>
+          <button class="pf-tab" data-filter="active">Active</button>
+          <button class="pf-tab" data-filter="upcoming">Upcoming</button>
+        </div>
+        <div class="proj-count" id="projCount">2 projects</div>
+      </div>
+
+      <!-- PROJECT LIST -->
+      <div class="proj-list" id="projList">
+
+        <!-- ── PROJECT 1 ── -->
+        <article class="proj-row glass-card" data-status="active" data-id="p1">
+          <div class="proj-row-main" onclick="toggleProject('p1')">
+            <div class="proj-row-left">
+              <div class="proj-row-status active-dot" title="Active"></div>
+              <div class="proj-row-info">
+                <h2 class="proj-row-title">AEA Club Web Development</h2>
+                <p class="proj-row-meta">Web Development &nbsp;&middot;&nbsp; Ongoing &nbsp;&middot;&nbsp; 2 seats available</p>
+              </div>
+            </div>
+            <div class="proj-row-right">
+              <span class="proj-row-tag">Active</span>
+              <svg class="proj-chevron" id="chevron-p1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <!-- DETAIL PANEL -->
+          <div class="proj-detail-panel" id="detail-p1">
+            <div class="proj-detail-inner">
+              <div class="proj-detail-grid">
+                <div class="proj-detail-section">
+                  <h3>About the Project</h3>
+                  <p>The official AEA Club website is an open, evolving platform. We are actively looking for members who can contribute to frontend development, UI/UX improvements, accessibility, and ongoing maintenance of the codebase.</p>
+                  <p>This is a great opportunity to build real-world experience on a live production project used by the entire club community.</p>
+                </div>
+                <div class="proj-detail-section">
+                  <h3>Requirements</h3>
+                  <ul class="proj-req-list">
+                    <li>Proficiency in HTML, CSS, and JavaScript</li>
+                    <li>Familiarity with version control (Git)</li>
+                    <li>Eye for clean, accessible UI design</li>
+                    <li>Ability to commit at least 4 hours per week</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="proj-detail-meta-row">
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Lead</span>
+                  <span class="chip-value">AEA Technical Team</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Duration</span>
+                  <span class="chip-value">Ongoing</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Seats</span>
+                  <span class="chip-value">2 open</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Stack</span>
+                  <span class="chip-value">HTML · CSS · JS</span>
+                </div>
+              </div>
+              <div class="proj-detail-cta">
+                <button class="btn btn-primary proj-register-btn" data-project="AEA Club Web Development">
+                  <span>Register to Collaborate</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <p class="proj-member-note">Members only. <a href="index.html#join">Not a member? Join here.</a></p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ── PROJECT 2 ── -->
+        <article class="proj-row glass-card" data-status="upcoming" data-id="p2">
+          <div class="proj-row-main" onclick="toggleProject('p2')">
+            <div class="proj-row-left">
+              <div class="proj-row-status upcoming-dot" title="Upcoming"></div>
+              <div class="proj-row-info">
+                <h2 class="proj-row-title">Smart Campus Automation System</h2>
+                <p class="proj-row-meta">IoT &nbsp;&middot;&nbsp; Embedded Systems &nbsp;&middot;&nbsp; 3 seats available</p>
+              </div>
+            </div>
+            <div class="proj-row-right">
+              <span class="proj-row-tag upcoming-tag">Upcoming</span>
+              <svg class="proj-chevron" id="chevron-p2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <div class="proj-detail-panel" id="detail-p2">
+            <div class="proj-detail-inner">
+              <div class="proj-detail-grid">
+                <div class="proj-detail-section">
+                  <h3>About the Project</h3>
+                  <p>A campus-wide automation initiative to monitor energy consumption, automate lighting, and collect environmental sensor data in real time. The project involves both hardware design and software development for a centralised dashboard.</p>
+                  <p>Contributors will work directly with microcontrollers, sensor modules, and data visualisation tools.</p>
+                </div>
+                <div class="proj-detail-section">
+                  <h3>Requirements</h3>
+                  <ul class="proj-req-list">
+                    <li>Knowledge of Arduino, Raspberry Pi, or similar platforms</li>
+                    <li>Basic understanding of electronics and circuit design</li>
+                    <li>Python or C++ programming experience</li>
+                    <li>Interest in IoT and embedded systems</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="proj-detail-meta-row">
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Lead</span>
+                  <span class="chip-value">AEA Technical Team</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Status</span>
+                  <span class="chip-value">Starting Soon</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Seats</span>
+                  <span class="chip-value">3 open</span>
+                </div>
+                <div class="proj-detail-chip">
+                  <span class="chip-label">Stack</span>
+                  <span class="chip-value">Arduino · Python · IoT</span>
+                </div>
+              </div>
+              <div class="proj-detail-cta">
+                <button class="btn btn-primary proj-register-btn" data-project="Smart Campus Automation System">
+                  <span>Register to Collaborate</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <p class="proj-member-note">Members only. <a href="index.html#join">Not a member? Join here.</a></p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /proj-list -->
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ════ MEMBER SIGN-IN MODAL ════ -->
+  <div class="modal-overlay" id="memberModal">
+    <div class="modal-box glass-card">
+      <button class="modal-close" id="memberModalClose" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-icon">&#128274;</div>
+      <h3>Member Sign In</h3>
+      <p class="modal-sub">This area is restricted to verified AEA Club members. Enter your registered credentials to continue.</p>
+      <form id="memberSignInForm" class="modal-form" novalidate>
+        <div class="form-group">
+          <label for="mem-email">Registered Email <span class="req">*</span></label>
+          <input type="email" id="mem-email" placeholder="yourname@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="mem-id">Member ID <span class="req">*</span></label>
+          <input type="text" id="mem-id" placeholder="e.g. AEA-2024-001" required />
+        </div>
+        <div class="modal-error" id="memberError">Invalid credentials. Please try again.</div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Verify &amp; Continue</span>
+        </button>
+      </form>
+      <p class="modal-footer-note">Not a member yet? <a href="index.html#join">Apply to join AEA Club</a></p>
+    </div>
+  </div>
+
+  <!-- ════ COLLABORATION REGISTRATION MODAL ════ -->
+  <div class="modal-overlay" id="collabModal">
+    <div class="modal-box modal-wide glass-card">
+      <button class="modal-close" id="collabModalClose" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <!-- FORM STATE -->
+      <div id="collabFormState">
+        <div class="modal-header">
+          <div class="modal-icon">&#129309;</div>
+          <h3>Register to Collaborate</h3>
+          <p class="collab-proj-label" id="collabProjLabel">Project Name</p>
+        </div>
+        <form id="collabRegForm" class="modal-form collab-form-grid" novalidate>
+          <div class="form-group">
+            <label for="cr-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="cr-name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="cr-email">Registered Email <span class="req">*</span></label>
+            <input type="email" id="cr-email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="cr-branch">Branch / Department <span class="req">*</span></label>
+            <select id="cr-branch" required>
+              <option value="" disabled selected>Select your branch</option>
+              <option>Computer Science Engineering</option>
+              <option>Electrical Engineering</option>
+              <option>Mechanical Engineering</option>
+              <option>Civil Engineering</option>
+              <option>Chemical Engineering</option>
+              <option>Electronics &amp; Communication</option>
+              <option>Information Technology</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cr-year">Year of Study <span class="req">*</span></label>
+            <select id="cr-year" required>
+              <option value="" disabled selected>Select year</option>
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+              <option>Post-Graduate</option>
+            </select>
+          </div>
+          <div class="form-group form-span-2">
+            <label for="cr-skills">Skills Relevant to This Project <span class="req">*</span></label>
+            <input type="text" id="cr-skills" placeholder="e.g. Python, Arduino, React, Circuit Design..." required />
+          </div>
+          <div class="form-group form-span-2">
+            <label for="cr-why">Why do you want to contribute? <span class="req">*</span></label>
+            <textarea id="cr-why" rows="3" placeholder="Describe what you'll bring to the team and your interest in this project..." required></textarea>
+          </div>
+          <div class="form-group form-span-2">
+            <label for="cr-cv">Upload CV / Resume <span class="req">*</span></label>
+            <div class="file-upload-area" id="crCvArea">
+              <input type="file" id="cr-cv" accept=".pdf,.doc,.docx" required />
+              <div class="file-upload-label">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span id="crCvLabel">Drop your CV here or <strong>click to browse</strong></span>
+                <small>PDF, DOC or DOCX &middot; Max 5 MB</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-span-2">
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Submit Application</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="modal-success" id="collabSuccess">
+        <div class="success-icon-lg">&#10003;</div>
+        <h3>Application Submitted</h3>
+        <p>Your collaboration request has been received. The AEA Club team will review your profile and get back to you.</p>
+        <button class="btn btn-glass" id="collabSuccessClose">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════ SUBMIT PROJECT MODAL ════ -->
+  <div class="modal-overlay" id="submitModal">
+    <div class="modal-box modal-wide glass-card">
+      <button class="modal-close" id="submitModalClose" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div id="submitFormState">
+        <div class="modal-header">
+          <div class="modal-icon">&#128196;</div>
+          <h3>Submit a Project</h3>
+          <p class="modal-sub">Members can propose new projects for AEA Club. The board will review and publish approved submissions.</p>
+        </div>
+        <form id="submitProjForm" class="modal-form collab-form-grid" novalidate>
+          <div class="form-group form-span-2">
+            <label for="sp-title">Project Title <span class="req">*</span></label>
+            <input type="text" id="sp-title" placeholder="Clear, descriptive project name" required />
+          </div>
+          <div class="form-group">
+            <label for="sp-domain">Domain / Category <span class="req">*</span></label>
+            <select id="sp-domain" required>
+              <option value="" disabled selected>Select domain</option>
+              <option>Web Development</option>
+              <option>IoT / Embedded Systems</option>
+              <option>Machine Learning / AI</option>
+              <option>Mechanical / Robotics</option>
+              <option>Civil / Structural</option>
+              <option>Electrical / Electronics</option>
+              <option>Data Science</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sp-seats">Seats Required <span class="req">*</span></label>
+            <input type="number" id="sp-seats" placeholder="e.g. 3" min="1" max="20" required />
+          </div>
+          <div class="form-group form-span-2">
+            <label for="sp-desc">Project Description <span class="req">*</span></label>
+            <textarea id="sp-desc" rows="4" placeholder="Describe the project objectives, expected outcomes, and relevance to engineering students..." required></textarea>
+          </div>
+          <div class="form-group form-span-2">
+            <label for="sp-skills">Skills Required from Collaborators <span class="req">*</span></label>
+            <input type="text" id="sp-skills" placeholder="e.g. Python, CAD, React, MATLAB..." required />
+          </div>
+          <div class="form-group form-span-2">
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Submit for Review</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-success" id="submitSuccess">
+        <div class="success-icon-lg">&#10003;</div>
+        <h3>Project Submitted</h3>
+        <p>Your project proposal has been sent to the AEA Club board for review. You will be notified once it is approved and published.</p>
+        <button class="btn btn-glass" id="submitSuccessClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="projects.js"></script>
+  <script>
+    // Minimal shared scripts
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }));
+    // Cursor glow
+    const glow = document.getElementById('cursor-glow');
+    let gx = 0, gy = 0, mx = 0, my = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function animGlow() {
+      gx += (mx - gx) * 0.06; gy += (my - gy) * 0.06;
+      glow.style.left = gx + 'px'; glow.style.top = gy + 'px';
+      requestAnimationFrame(animGlow);
+    })();
+  </script>
+</body>
+</html>
