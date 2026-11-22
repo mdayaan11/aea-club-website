@@ -171,7 +171,7 @@ module.exports = async function handler(req, res) {
             <tr><td style="padding:9px 0;color:rgba(238,233,223,0.4);">Status</td><td style="color:#25D366;font-weight:700;">✓ Approved</td></tr>
           </table>
 
-          <a href="https://chat.whatsapp.com/GQnRp0BaDnB2w4VvXlq1uU" style="display:block;padding:14px 20px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;text-decoration:none;border-radius:4px;text-align:center;font-weight:700;font-size:0.95rem;margin-bottom:28px;">
+          <a href="https://chat.whatsapp.com/GXeU4KvBVwX89RxCLUNIZD" style="display:block;padding:14px 20px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;text-decoration:none;border-radius:4px;text-align:center;font-weight:700;font-size:0.95rem;margin-bottom:28px;">
             📱 Join our WhatsApp Community →
           </a>
 
